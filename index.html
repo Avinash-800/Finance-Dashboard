@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<header>
+    <h2>Finance Dashboard</h2>
+
+    <div>
+        Role:
+        <select id="roleSelect">
+            <option value="viewer">Viewer</option>
+            <option value="admin">Admin</option>
+        </select>
+    </div>
+</header>
+
+<div class="container">
+
+<!-- Summary Cards -->
+
+<div class="cards">
+
+    <div class="card">
+        <h3>Total Balance</h3>
+        <p id="balance">₹0</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Income</h3>
+        <p id="income">₹0</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Expenses</h3>
+        <p id="expenses">₹0</p>
+    </div>
+
+</div>
+
+<!-- Charts -->
+
+<div class="charts">
+
+    <canvas id="trendChart"></canvas>
+
+    <canvas id="categoryChart"></canvas>
+
+</div>
+
+<h3>Transactions</h3>
+
+<div class="controls">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search category"
+    >
+
+    <select id="typeFilter">
+        <option value="all">All</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+    </select>
+
+    <button id="addBtn">
+        Add Transaction
+    </button>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Date</th>
+<th>Category</th>
+<th>Amount</th>
+<th>Type</th>
+</tr>
+
+</thead>
+
+<tbody id="transactionTable">
+
+</tbody>
+
+</table>
+
+<!-- Insights -->
+
+<div class="insights">
+
+    <h3>Insights</h3>
+
+    <p id="highestCategory"></p>
+
+    <p id="monthlyComparison"></p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
